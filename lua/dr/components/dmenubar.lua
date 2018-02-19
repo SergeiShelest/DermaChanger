@@ -12,5 +12,5 @@ t["MenuBar"]["CornerRadius"] = "Corner radius"
 function SKIN:PaintMenuBar( panel, w, h )
 
 	draw.RoundedBox(d["MenuBar"]["CornerRadius"], 0, 0, w, h, d["MenuBar"]["Background"])
-	
+
 end

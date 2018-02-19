@@ -217,5 +217,6 @@ end
 hook.Add("Think", "OpenMenu", function()
 	if input.IsKeyDown(KEY_F2) and !IsValid(PANEL.Base) then
 		Menu()
+		derma.RefreshSkins()
 	end
 end)
