@@ -325,8 +325,10 @@ local function Menu()
 	end
 end
 
-hook.Add("Think", "OpenMenu", function()
-	if input.IsKeyDown(KEY_F2) and !IsValid(PANEL.Base) then
+concommand.Add("dceditor", function(ply, cmd, args)
+	if !IsValid(PANEL.Base) then
 		Menu()
+	else
+		print("[DermaChanger] The window already exists")
 	end
-end)
+end )
