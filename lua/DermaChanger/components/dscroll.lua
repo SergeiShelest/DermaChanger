@@ -75,7 +75,7 @@ function SKIN:PaintButtonDown( panel, w, h )
 		{ x = w/2, y = h -d["Scroll"]["ArrowSize"] }
 	}
 
-	surface.SetDrawColor( 255, 255, 255 )
+	surface.SetDrawColor( d["Scroll"]["ArrowColor"].r, d["Scroll"]["ArrowColor"].g, d["Scroll"]["ArrowColor"].b, d["Scroll"]["ArrowColor"].a )
 	draw.NoTexture()
 	surface.DrawPoly( triangle )
 
@@ -101,7 +101,7 @@ function SKIN:PaintButtonLeft( panel, w, h )
 		{ x = d["Scroll"]["ArrowSize"], y = h/2 }
 	}
 
-	surface.SetDrawColor( 255, 255, 255 )
+	surface.SetDrawColor( d["Scroll"]["ArrowColor"].r, d["Scroll"]["ArrowColor"].g, d["Scroll"]["ArrowColor"].b, d["Scroll"]["ArrowColor"].a )
 	draw.NoTexture()
 	surface.DrawPoly( triangle )
 
@@ -127,7 +127,7 @@ function SKIN:PaintButtonRight( panel, w, h )
 		{ x = d["Scroll"]["ArrowSize"], y = h -d["Scroll"]["ArrowSize"] }
 	}
 
-	surface.SetDrawColor( 255, 255, 255 )
+	surface.SetDrawColor( d["Scroll"]["ArrowColor"].r, d["Scroll"]["ArrowColor"].g, d["Scroll"]["ArrowColor"].b, d["Scroll"]["ArrowColor"].a )
 	draw.NoTexture()
 	surface.DrawPoly( triangle )
 
