@@ -1,13 +1,10 @@
-d["MenuBar"] = {}
-t["MenuBar"] = {}
+d["MenuBar"], t["MenuBar"] = {}, {}
 
-t["MenuBar"]["TITLE"] = "Menu bar"
+t["MenuBar"]["TITLE"] = "MenuBar"
 
-d["MenuBar"]["Background"] = Color(50, 50, 50)
-d["MenuBar"]["CornerRadius"] = 0
+d["MenuBar"]["Background"], t["MenuBar"]["Background"] = Color(50, 50, 50), "Background"
+d["MenuBar"]["CornerRadius"], t["MenuBar"]["CornerRadius"] = 0, "CornerRadius"
 
-t["MenuBar"]["Background"] = "Background"
-t["MenuBar"]["CornerRadius"] = "Corner radius"
 
 function SKIN:PaintMenuBar( panel, w, h )
 

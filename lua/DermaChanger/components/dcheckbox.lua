@@ -7,15 +7,12 @@ d["СheckBox"]["Hovered"], t["СheckBox"]["Hovered"] = Color(187, 102, 17), "Hov
 d["СheckBox"]["Active"], t["СheckBox"]["Active"] = Color(197, 122, 27), "Active"
 d["СheckBox"]["DisabledActive"], t["СheckBox"]["DisabledActive"] = Color(50, 50, 50), "DisabledActive"
 d["СheckBox"]["Disabled"], t["СheckBox"]["Disabled"] = Color(100, 100, 100), "Disabled"
-
 d["СheckBox"]["BorderNotActive"], t["СheckBox"]["BorderNotActive"] = Color(197, 122, 27), "BorderNotActive"
 d["СheckBox"]["BorderHovered"], t["СheckBox"]["BorderHovered"] = Color(187, 102, 17), "BorderHovered"
 d["СheckBox"]["BorderActive"], t["СheckBox"]["BorderActive"] = Color(197, 122, 27), "BorderActive"
 d["СheckBox"]["BorderDisabledActive"], t["СheckBox"]["BorderDisabledActive"] = Color(50, 50, 50), "BorderDisabledActive"
 d["СheckBox"]["BorderDisabled"], t["СheckBox"]["BorderDisabled"] = Color(100, 100, 100), "BorderDisabled"
-
 d["СheckBox"]["BorderSize"], t["СheckBox"]["BorderSize"] = 1, "BorderSize"
-
 d["СheckBox"]["CornerRadius"], t["СheckBox"]["CornerRadius"] = 0, "CornerRadius"
 
 local Col = nil

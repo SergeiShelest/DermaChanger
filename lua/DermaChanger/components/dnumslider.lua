@@ -10,30 +10,31 @@ d["NumSlider"]["Disabled"], t["NumSlider"]["Disabled"] = Color(100, 100, 100), "
 
 local function PaintNotches( x, y, w, h, num )
 
-	if ( !num ) then return end
+	if !num then return end
 
 	local space = w / num
 
 	for i = 0, num do
-
 		surface.DrawRect( x + i * space, y + 4, 1, 5 )
-
 	end
 
 end
 
 function SKIN:PaintNumSlider( panel, w, h )
 
-	surface.SetDrawColor( d["NumSlider"]["Line"] )
-	surface.DrawRect( 8, h / 2 - 1, w - 15, 1 )
+	surface.SetDrawColor(d["NumSlider"]["Line"])
+	surface.DrawRect(8, h / 2 - 1, w - 15, 1)
 
-	PaintNotches( 8, h / 2 - 1, w - 16, 1, panel.m_iNotches )
+	PaintNotches(8, h / 2 - 1, w - 16, 1, panel.m_iNotches)
 
 end
 
+local Col = nil
+local triangle = {}
+
 function SKIN:PaintSliderKnob( panel, w, h )
 
-	local triangle = {
+	triangle = {
 		{ x = 3, y = 0 },
 		{ x = w-3, y = 0 },
 		{ x = w-3, y = 5 },
@@ -42,21 +43,21 @@ function SKIN:PaintSliderKnob( panel, w, h )
 
 	}
 
-	surface.SetDrawColor(d["NumSlider"]["NotActive"].r, d["NumSlider"]["NotActive"].g, d["NumSlider"]["NotActive"].b, d["NumSlider"]["NotActive"].a)
+	Col = d["NumSlider"]["NotActive"]
 
-
-	if ( panel:GetDisabled() ) then	
-		surface.SetDrawColor(d["NumSlider"]["Disabled"].r, d["NumSlider"]["Disabled"].g, d["NumSlider"]["Disabled"].b, d["NumSlider"]["Disabled"].a)		
+	if panel:GetDisabled() then	
+		Col = d["NumSlider"]["Disabled"]
 	end
 
-	if ( panel.Depressed ) then
-		surface.SetDrawColor(d["NumSlider"]["Active"].r, d["NumSlider"]["Active"].g, d["NumSlider"]["Active"].b, d["NumSlider"]["Active"].a)
+	if panel.Depressed then
+		Col = d["NumSlider"]["Active"]
 	end
 
-	if ( panel.Hovered ) then
-		surface.SetDrawColor(d["NumSlider"]["Hovered"].r, d["NumSlider"]["Hovered"].g, d["NumSlider"]["Hovered"].b, d["NumSlider"]["Hovered"].a)
+	if panel.Hovered then
+		Col = d["NumSlider"]["Hovered"]
 	end
 
+	surface.SetDrawColor(Col.r, Col.g, Col.b, Col.a)
 	draw.NoTexture()
 	surface.DrawPoly( triangle )
 
