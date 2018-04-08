@@ -1,4 +1,3 @@
-
 d = {}
 t = {}
 
@@ -26,6 +25,7 @@ end
 if not file.Exists("data/dermachanger/al.txt", "GAME") then
 	print("[DermaChanger] Creating an autorun file")
 	print("[DermaChanger] Creating data/dermachanger/al.txt")
+	
 	file.CreateDir("dermachanger")
 	file.Write("dermachanger/al.txt", "{}")
 end

@@ -73,7 +73,7 @@ local function Menu()
 		local col = d[ value ][ value2 ]
 		
 		local label = vgui.Create("DLabel", PANEL.Panel) 
-		label:SetPos(x +35, y)
+		label:SetPos(x +25, y +3)
 		label:SetText(Label)
 		label:SizeToContents()
 
@@ -108,7 +108,21 @@ local function Menu()
 		end
 
 		button.Paint = function(self, w, h)
-			draw.RoundedBox(10, 0, 0, w, h, col)
+
+			surface.SetDrawColor(255, 255, 255, 255)
+			surface.SetMaterial(Material("gui/alpha_grid.png"))
+			surface.DrawTexturedRect(1, 1, w -2, h -2)
+
+			draw.RoundedBox(0, 1, 1, w -2, h -2, col)
+
+			surface.SetDrawColor(255, 255, 255, 255)
+			if self.Hovered then
+				surface.SetMaterial(Material("vgui/spawnmenu/hover"))
+			else
+				surface.SetMaterial(Material("gui/contenticon-hovered.png"))
+			end
+			surface.DrawTexturedRect(0, 0, w, h)
+
 		end
 	end
 
@@ -117,7 +131,7 @@ local function Menu()
 		local int = d[ value ][ value2 ]
 
 		local label = vgui.Create("DLabel", PANEL.Panel)
-		label:SetPos(x +35, y)
+		label:SetPos(x +25, y +3)
 		label:SetText(Label)
 		label:SizeToContents()
 
@@ -154,7 +168,17 @@ local function Menu()
 		end
 
 		button.Paint = function (self, w, h)
-			draw.RoundedBox(10, 0, 0, w, h, Color(50, 50, 50))
+
+			draw.RoundedBox(0, 1, 1, w -2, h -2, Color(50, 50, 50))
+		
+			surface.SetDrawColor(255, 255, 255, 255)
+			if self.Hovered then
+				surface.SetMaterial(Material("vgui/spawnmenu/hover"))
+			else
+				surface.SetMaterial(Material("gui/contenticon-hovered.png"))
+			end
+			surface.DrawTexturedRect(0, 0, w, h)
+
 		end
 	end
 
@@ -163,7 +187,7 @@ local function Menu()
 		local str = d[ value ][ value2 ]
 
 		local label = vgui.Create("DLabel", PANEL.Panel)
-		label:SetPos(x +35, y)
+		label:SetPos(x +25, y +3)
 		label:SetText(Label)
 		label:SizeToContents()
 
@@ -194,7 +218,17 @@ local function Menu()
 		end
 
 		button.Paint = function (self, w, h)
-			draw.RoundedBox(10, 0, 0, w, h, Color(50, 50, 50))
+
+			draw.RoundedBox(0, 1, 1, w -2, h -2, Color(50, 50, 50))
+		
+			surface.SetDrawColor(255, 255, 255, 255)
+			if self.Hovered then
+				surface.SetMaterial(Material("vgui/spawnmenu/hover"))
+			else
+				surface.SetMaterial(Material("gui/contenticon-hovered.png"))
+			end
+			surface.DrawTexturedRect(0, 0, w, h)
+		
 		end
 	end
 
@@ -320,13 +354,14 @@ local function Menu()
 				    py = 0
 				    px = px + 30
 				end
+
 			end
 		end
 	end
 end
 
 concommand.Add("dceditor", function(ply, cmd, args)
-	if !IsValid(PANEL.Base) then
+	if not IsValid(PANEL.Base) then
 		Menu()
 	else
 		print("[DermaChanger] The window already exists")

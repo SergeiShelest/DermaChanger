@@ -13,11 +13,11 @@ d["Tab"]["Font"], t["Tab"]["Font"] = "DermaDefaultBold", "Font"
 
 function SKIN:PaintTab( panel, w, h )
 
-	if ( !panel.m_bBackground ) then return end
+	if not panel.m_bBackground then return end
 
-	panel:SetFont( d["Tab"]["Font"] )
+	panel:SetFont(d["Tab"]["Font"])
 
-	if ( panel:GetPropertySheet():GetActiveTab() == panel ) then
+	if panel:GetPropertySheet():GetActiveTab() == panel then
 
 		draw.RoundedBox(d["Tab"]["CornerRadius"], 0, 0, w, h -8, d["Tab"]["Select"])
 
@@ -33,7 +33,7 @@ function SKIN:PaintTab( panel, w, h )
 
 		panel.m_colText = d["Tab"]["ActiveTextColor"]
 
-	elseif ( panel.Hovered ) then
+	elseif panel.Hovered then
 
 		draw.RoundedBox(d["Tab"]["CornerRadius"], 0, 0, w, h, d["Tab"]["Hovered"])
 		

@@ -1,17 +1,14 @@
-d["Panel"] = {}
-t["Panel"] = {}
+d["Panel"], t["Panel"] = {}, {}
 
 t["Panel"]["TITLE"] = "Panel"
 
-d["Panel"]["Background"] = Color(70, 70, 70)
-d["Panel"]["CornerRadius"] = 0
+d["Panel"]["Background"], t["Panel"]["Background"] = Color(70, 70, 70), "Background"
+d["Panel"]["CornerRadius"], t["Panel"]["CornerRadius"] = 0, "CornerRadius"
 
-t["Panel"]["Background"] = "Background"
-t["Panel"]["CornerRadius"] = "Corner Radius"
 
 function SKIN:PaintPanel( panel, w, h )
 
-	if ( !panel.m_bBackground ) then return end	
+	if not panel.m_bBackground then return end	
 
 	draw.RoundedBox(d["Panel"]["CornerRadius"], 0, 0, w, h, d["Panel"]["Background"])
 

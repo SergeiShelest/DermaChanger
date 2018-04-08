@@ -12,36 +12,54 @@ d["Scroll"]["ArrowSize"], t["Scroll"]["ArrowSize"] = 3, "ArrowSize"
 d["Scroll"]["ArrowColor"], t["Scroll"]["ArrowColor"] = Color(255, 255, 255), "Arrow color"
 
 function SKIN:PaintVScrollBar( panel, w, h )
+
 	draw.RoundedBox(d["Scroll"]["CornerRadius"], 0, 0, w, h, d["Scroll"]["Background"])
+
 end
+
+local grip = Color(0, 0, 0, 0)
 
 function SKIN:PaintScrollBarGrip( panel, w, h )
 
-	if ( panel:GetDisabled() ) then
-		draw.RoundedBox(d["Scroll"]["CornerRadius"], 0, 0, w, h, d["Scroll"]["Disabled"])
-	elseif ( panel.Depressed ) then
-		draw.RoundedBox(d["Scroll"]["CornerRadius"], 0, 0, w, h, d["Scroll"]["Active"])
-	elseif ( panel.Hovered ) then
-		draw.RoundedBox(d["Scroll"]["CornerRadius"], 0, 0, w, h, d["Scroll"]["Hovered"])
-	else
-		draw.RoundedBox(d["Scroll"]["CornerRadius"], 0, 0, w, h, d["Scroll"]["NotActive"])
+	grip = d["Scroll"]["NotActive"]
+
+	if panel:GetDisabled() then
+		grip = d["Scroll"]["Disabled"]
 	end
+	
+	if panel.Depressed then
+		grip = d["Scroll"]["Active"]
+	end
+
+	if ( panel.Hovered ) then
+		grip = d["Scroll"]["Hovered"]
+	end
+	
+	draw.RoundedBox(d["Scroll"]["CornerRadius"], 0, 0, w, h, grip)
 
 end
 
+local up = Color(0, 0, 0, 0)
+
 function SKIN:PaintButtonUp( panel, w, h )
 
-	if ( !panel.m_bBackground ) then return end
+	if not panel.m_bBackground then return end
 
-	if ( panel.Depressed || panel:IsSelected() ) then
-		draw.RoundedBox(d["Scroll"]["CornerRadius"], 0, 0, w, h, d["Scroll"]["Active"])
-	elseif ( panel:GetDisabled() ) then
-		draw.RoundedBox(d["Scroll"]["CornerRadius"], 0, 0, w, h, d["Scroll"]["Disabled"])
-	elseif ( panel.Hovered ) then
-		draw.RoundedBox(d["Scroll"]["CornerRadius"], 0, 0, w, h, d["Scroll"]["Hovered"])
-	else
-		draw.RoundedBox(d["Scroll"]["CornerRadius"], 0, 0, w, h, d["Scroll"]["NotActive"])
+	up = d["Scroll"]["NotActive"]
+
+	if panel.Depressed or panel:IsSelected() then
+		up = d["Scroll"]["Active"]
 	end
+	
+	if panel:GetDisabled() then
+		up = d["Scroll"]["Disabled"]
+	end
+
+	if panel.Hovered then
+		up = d["Scroll"]["Hovered"]
+	end
+
+	draw.RoundedBox(d["Scroll"]["CornerRadius"], 0, 0, w, h, up)
 
 	local triangle = {
 		{ x = d["Scroll"]["ArrowSize"], y = h -d["Scroll"]["ArrowSize"] },
@@ -49,25 +67,33 @@ function SKIN:PaintButtonUp( panel, w, h )
 		{ x = w -d["Scroll"]["ArrowSize"], y = h -d["Scroll"]["ArrowSize"] }
 	}
 
-	surface.SetDrawColor( d["Scroll"]["ArrowColor"].r, d["Scroll"]["ArrowColor"].g, d["Scroll"]["ArrowColor"].b, d["Scroll"]["ArrowColor"].a )
+	surface.SetDrawColor(d["Scroll"]["ArrowColor"].r, d["Scroll"]["ArrowColor"].g, d["Scroll"]["ArrowColor"].b, d["Scroll"]["ArrowColor"].a)
 	draw.NoTexture()
-	surface.DrawPoly( triangle )
+	surface.DrawPoly(triangle)
 
 end
 
+local down = Color(0, 0, 0, 0)
+
 function SKIN:PaintButtonDown( panel, w, h )
 
-	if ( !panel.m_bBackground ) then return end
+	if not panel.m_bBackground then return end
 
-	if ( panel.Depressed || panel:IsSelected() ) then
-		draw.RoundedBox(d["Scroll"]["CornerRadius"], 0, 0, w, h, d["Scroll"]["Active"])
-	elseif ( panel:GetDisabled() ) then
-		draw.RoundedBox(d["Scroll"]["CornerRadius"], 0, 0, w, h, d["Scroll"]["Disabled"])
-	elseif ( panel.Hovered ) then
-		draw.RoundedBox(d["Scroll"]["CornerRadius"], 0, 0, w, h, d["Scroll"]["Hovered"])
-	else
-		draw.RoundedBox(d["Scroll"]["CornerRadius"], 0, 0, w, h, d["Scroll"]["NotActive"])
+	down = d["Scroll"]["NotActive"]
+
+	if panel.Depressed or panel:IsSelected() then
+		down = d["Scroll"]["Active"]
 	end
+
+	if panel:GetDisabled() then
+		down = d["Scroll"]["Disabled"]
+	end
+
+	if panel.Hovered then
+		down = d["Scroll"]["Hovered"]
+	end
+
+	draw.RoundedBox(d["Scroll"]["CornerRadius"], 0, 0, w, h, down)
 
 	local triangle = {
 		{ x = d["Scroll"]["ArrowSize"], y = d["Scroll"]["ArrowSize"] },
@@ -77,23 +103,31 @@ function SKIN:PaintButtonDown( panel, w, h )
 
 	surface.SetDrawColor( d["Scroll"]["ArrowColor"].r, d["Scroll"]["ArrowColor"].g, d["Scroll"]["ArrowColor"].b, d["Scroll"]["ArrowColor"].a )
 	draw.NoTexture()
-	surface.DrawPoly( triangle )
+	surface.DrawPoly(triangle)
 
 end
 
+local left = Color(0, 0, 0, 0)
+
 function SKIN:PaintButtonLeft( panel, w, h )
 
-	if ( !panel.m_bBackground ) then return end
+	if not panel.m_bBackground then return end
 
-	if ( panel.Depressed || panel:IsSelected() ) then
-		draw.RoundedBox(d["Scroll"]["CornerRadius"], 0, 0, w, h, d["Scroll"]["Active"])
-	elseif ( panel:GetDisabled() ) then
-		draw.RoundedBox(d["Scroll"]["CornerRadius"], 0, 0, w, h, d["Scroll"]["Disabled"])
-	elseif ( panel.Hovered ) then
-		draw.RoundedBox(d["Scroll"]["CornerRadius"], 0, 0, w, h, d["Scroll"]["Hovered"])
-	else
-		draw.RoundedBox(d["Scroll"]["CornerRadius"], 0, 0, w, h, d["Scroll"]["NotActive"])
+	left = d["Scroll"]["NotActive"]
+
+	if panel.Depressed or panel:IsSelected() then
+		left = d["Scroll"]["Active"]
 	end
+
+	if panel:GetDisabled() then
+		left = d["Scroll"]["Disabled"]
+	end
+	
+	if panel.Hovered then
+		left = d["Scroll"]["Hovered"]
+	end
+
+	draw.RoundedBox(d["Scroll"]["CornerRadius"], 0, 0, w, h, left)
 
 	local triangle = {
 		{ x = w -d["Scroll"]["ArrowSize"], y = d["Scroll"]["ArrowSize"] },
@@ -103,23 +137,31 @@ function SKIN:PaintButtonLeft( panel, w, h )
 
 	surface.SetDrawColor( d["Scroll"]["ArrowColor"].r, d["Scroll"]["ArrowColor"].g, d["Scroll"]["ArrowColor"].b, d["Scroll"]["ArrowColor"].a )
 	draw.NoTexture()
-	surface.DrawPoly( triangle )
+	surface.DrawPoly(triangle)
 
 end
 
+local right = Color(0, 0, 0, 0)
+
 function SKIN:PaintButtonRight( panel, w, h )
 
-	if ( !panel.m_bBackground ) then return end
+	if not panel.m_bBackground then return end
 
-	if ( panel.Depressed || panel:IsSelected() ) then
-		draw.RoundedBox(d["Scroll"]["CornerRadius"], 0, 0, w, h, d["Scroll"]["Active"])
-	elseif ( panel:GetDisabled() ) then
-		draw.RoundedBox(d["Scroll"]["CornerRadius"], 0, 0, w, h, d["Scroll"]["Disabled"])
-	elseif ( panel.Hovered ) then
-		draw.RoundedBox(d["Scroll"]["CornerRadius"], 0, 0, w, h, d["Scroll"]["Hovered"])
-	else
-		draw.RoundedBox(d["Scroll"]["CornerRadius"], 0, 0, w, h, d["Scroll"]["NotActive"])
+	right = d["Scroll"]["NotActive"]
+
+	if panel.Depressed or panel:IsSelected() then
+		right = d["Scroll"]["Active"]
 	end
+	
+	if panel:GetDisabled() then
+		right = d["Scroll"]["Disabled"]
+	end
+
+	if panel.Hovered then
+		right = d["Scroll"]["Hovered"]
+	end
+
+	draw.RoundedBox(d["Scroll"]["CornerRadius"], 0, 0, w, h, right)
 
 	local triangle = {
 		{ x = d["Scroll"]["ArrowSize"], y = d["Scroll"]["ArrowSize"] },
@@ -129,6 +171,6 @@ function SKIN:PaintButtonRight( panel, w, h )
 
 	surface.SetDrawColor( d["Scroll"]["ArrowColor"].r, d["Scroll"]["ArrowColor"].g, d["Scroll"]["ArrowColor"].b, d["Scroll"]["ArrowColor"].a )
 	draw.NoTexture()
-	surface.DrawPoly( triangle )
+	surface.DrawPoly(triangle)
 
 end

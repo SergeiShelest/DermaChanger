@@ -1,17 +1,11 @@
-d["Frame"] = {}
-t["Frame"] = {}
+d["Frame"], t["Frame"] = {}, {}
 
 t["Frame"]["TITLE"] = "Frame"
 
-d["Frame"]["BackgroundLine"] = Color(60, 60, 60)
-d["Frame"]["Background"] = Color(70, 70, 70)
-d["Frame"]["TitleColor"] = Color(255, 255, 255)
-d["Frame"]["CornerRadius"] = 0
-
-t["Frame"]["BackgroundLine"] = "Background line"
-t["Frame"]["Background"] = "Background"
-t["Frame"]["TitleColor"] = "Title color"
-t["Frame"]["CornerRadius"] = "CornerRadius"
+d["Frame"]["BackgroundLine"], t["Frame"]["BackgroundLine"] = Color(60, 60, 60), "Line"
+d["Frame"]["Background"], t["Frame"]["Background"] = Color(70, 70, 70), "Background"
+d["Frame"]["TitleColor"], t["Frame"]["TitleColor"] = Color(255, 255, 255), "TitleColor"
+d["Frame"]["CornerRadius"], t["Frame"]["CornerRadius"] = 0, "CornerRadius"
 
 surface.CreateFont("Title", {
 	font = "CloseCaption_Normal",
@@ -24,7 +18,6 @@ surface.CreateFont("Title", {
 function SKIN:PaintFrame(panel, w, h)
 	
 	draw.RoundedBox(d["Frame"]["CornerRadius"], 0, 0, w, h, d["Frame"]["Background"])
-
 	draw.RoundedBoxEx(d["Frame"]["CornerRadius"], 0, 0, w, 25, d["Frame"]["BackgroundLine"], true, true)
 
 	if IsValid(panel.lblTitle) then

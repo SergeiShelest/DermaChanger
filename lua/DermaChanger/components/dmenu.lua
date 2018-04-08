@@ -25,7 +25,7 @@ function SKIN:PaintMenuOption( panel, w, h )
 
 	draw.RoundedBox(0, 0, 0, h, h, d["Menu"]["Line"] )
 
-	if ( panel.m_bBackground && (panel.Hovered || panel.Highlight) ) then
+	if panel.m_bBackground and (panel.Hovered or panel.Highlight) then
 		draw.RoundedBox(0, 0, 0, w, h, d["Menu"]["Hover"] )
 	end
 
@@ -40,7 +40,7 @@ function SKIN:PaintMenuOption( panel, w, h )
 
 		surface.SetDrawColor( d["Menu"]["Checked"].r, d["Menu"]["Checked"].g, d["Menu"]["Checked"].b, d["Menu"]["Checked"].a )
 		draw.NoTexture()
-		surface.DrawPoly( triangle )
+		surface.DrawPoly(triangle)
 	end
 
 end
@@ -55,5 +55,5 @@ function SKIN:PaintMenuRightArrow( panel, w, h )
 
 	surface.SetDrawColor( d["Menu"]["ArrowColor"].r, d["Menu"]["ArrowColor"].g, d["Menu"]["ArrowColor"].b, d["Menu"]["ArrowColor"].a )
 	draw.NoTexture()
-	surface.DrawPoly( triangle )
+	surface.DrawPoly(triangle)
 end

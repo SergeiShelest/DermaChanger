@@ -20,11 +20,11 @@ end
 
 function SKIN:PaintTreeNode( panel, w, h )
 
-	if ( !panel.m_bDrawLines ) then return end
+	if !panel.m_bDrawLines then return end
 
 	surface.SetDrawColor(d["Tree"]["BackgroundLines"])
 
-	if ( panel.m_bLastChild ) then
+	if panel.m_bLastChild then
 
 		surface.DrawRect( 9, 0, 1, 7 )
 		surface.DrawRect( 9, 7, 9, 1 )
@@ -40,7 +40,7 @@ function SKIN:PaintTreeNodeButton( panel, w, h )
 
 	local w, _ = panel:GetTextSize()
 
-	if ( !panel.m_bSelected ) then 
+	if !panel.m_bSelected then 
 
 		panel.m_colText = d["Tree"]["NodeText"]
 		panel:SetFont( d["Tree"]["Font"] )

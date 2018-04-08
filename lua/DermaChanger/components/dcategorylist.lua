@@ -53,8 +53,8 @@ function SKIN:PaintCollapsibleCategory( panel, w, h )
 		
 end
 
-local CBCol = nil
-local CBColBord = nil
+local CBCol = Color(0, 0, 0, 0)
+local CBColBord = Color(0, 0, 0, 0)
 
 function SKIN:PaintCategoryButton( panel, w, h )
 

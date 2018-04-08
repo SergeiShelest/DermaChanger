@@ -10,7 +10,7 @@ d["NumSlider"]["Disabled"], t["NumSlider"]["Disabled"] = Color(100, 100, 100), "
 
 local function PaintNotches( x, y, w, h, num )
 
-	if !num then return end
+	if not num then return end
 
 	local space = w / num
 
@@ -29,7 +29,7 @@ function SKIN:PaintNumSlider( panel, w, h )
 
 end
 
-local Col = nil
+local Col = Color(0, 0, 0, 0)
 local triangle = {}
 
 function SKIN:PaintSliderKnob( panel, w, h )

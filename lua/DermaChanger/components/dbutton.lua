@@ -18,13 +18,13 @@ d["Button"]["BorderDisabled"], t["Button"]["BorderDisabled"] = Color(255, 255, 2
 d["Button"]["BorderSize"], t["Button"]["BorderSize"] = 0, "BorderSize"
 d["Button"]["CornerRadius"], t["Button"]["CornerRadius"] = 5, "Corner Radius"
 
-local TextCol = nil
-local Col = nil
-local ColBorder = nil
+local TextCol = Color(0, 0, 0, 0)
+local Col = Color(0, 0, 0, 0)
+local ColBorder = Color(0, 0, 0, 0)
 
 function SKIN:PaintButton( panel, w, h )
 
-	if !panel.m_bBackground then return end
+	if not panel.m_bBackground then return end
 
 	panel:SetDrawBorder( false )
 

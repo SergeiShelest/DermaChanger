@@ -1,6 +1,5 @@
 d["PropertySheet"], t["PropertySheet"] = {}, {}
 
-
 t["PropertySheet"]["TITLE"] = "PropertySheet"
 
 d["PropertySheet"]["Background"], t["PropertySheet"]["Background"] = Color(70, 70, 70), "Background"

@@ -15,8 +15,8 @@ d["СheckBox"]["BorderDisabled"], t["СheckBox"]["BorderDisabled"] = Color(100, 
 d["СheckBox"]["BorderSize"], t["СheckBox"]["BorderSize"] = 1, "BorderSize"
 d["СheckBox"]["CornerRadius"], t["СheckBox"]["CornerRadius"] = 0, "CornerRadius"
 
-local Col = nil
-local ColBord = nil
+local Col = Color(0, 0, 0, 0)
+local ColBord = Color(0, 0, 0, 0)
 
 function SKIN:PaintCheckBox( panel, w, h )
 

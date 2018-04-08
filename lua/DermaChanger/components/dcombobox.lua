@@ -18,8 +18,8 @@ d["ComboBox"]["ArrowDisabled"], t["ComboBox"]["ArrowDisabled"] = Color(50, 50, 5
 d["ComboBox"]["ArrowHover"], t["ComboBox"]["ArrowHover"] = Color(197, 122, 27), "ArrowHover"
 d["ComboBox"]["ArrowFocus"], t["ComboBox"]["ArrowFocus"] = Color(197, 122, 27), "ArrowFocus"
 
-local Col = nil
-local ColBord = nil
+local Col = Color(0, 0, 0, 0)
+local ColBord = Color(0, 0, 0, 0)
 
 function SKIN:PaintComboBox( panel, w, h )
 
