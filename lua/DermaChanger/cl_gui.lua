@@ -19,7 +19,7 @@ local function Menu()
 		
 		function PANEL.Open.Browser:OnSelect(path, pnl)
 			local f = file.Read(path, "GAME")
-			DCLoadTheme(d, util.JSONToTable(f))
+			DCLoadTheme(DC_d, util.JSONToTable(f))
 		end
 	end
 
@@ -40,7 +40,7 @@ local function Menu()
 		PANEL.Save.Button:SetSize(35, 25)
 		PANEL.Save.Button:SetText("Save")
 		PANEL.Save.Button.DoClick = function()
-			local tab = util.TableToJSON(d)
+			local tab = util.TableToJSON(DC_d, true)
 			local name = PANEL.Save.TextEntry:GetValue()
 			
 			file.CreateDir("dermachanger/themes")
@@ -56,7 +56,7 @@ local function Menu()
 		SetAutoLoad:SetSize(150, 28)
 		SetAutoLoad:SetText("Set as startup")
 		SetAutoLoad.DoClick = function()
-			file.Write("dermachanger/al.txt", util.TableToJSON(d))
+			file.Write("dermachanger/al.txt", util.TableToJSON(DC_d))
 		end
 
 		SetAutoLoad = vgui.Create("DButton", PANEL.Panel)
@@ -70,7 +70,7 @@ local function Menu()
 
 	local function SettingColor(x, y, Label, value, value2)
 
-		local col = d[ value ][ value2 ]
+		local col = DC_d[ value ][ value2 ]
 		
 		local label = vgui.Create("DLabel", PANEL.Panel) 
 		label:SetPos(x +25, y +3)
@@ -103,7 +103,7 @@ local function Menu()
 			MixerButton:SetText("OK")
 			MixerButton.DoClick = function()
 				col = Mixer:GetColor()			
-				d[ value ][ value2 ] = col
+				DC_d[ value ][ value2 ] = col
 			end
 		end
 
@@ -128,7 +128,7 @@ local function Menu()
 
 	local function SettingInt(x, y, Label, value, value2)
 
-		local int = d[ value ][ value2 ]
+		local int = DC_d[ value ][ value2 ]
 
 		local label = vgui.Create("DLabel", PANEL.Panel)
 		label:SetPos(x +25, y +3)
@@ -162,7 +162,7 @@ local function Menu()
 			NumSliderButton:SetText("OK")
 			NumSliderButton.DoClick = function()
 				int = math.floor(NumSlider:GetValue())
-				d[ value ][ value2 ] = int
+				DC_d[ value ][ value2 ] = int
 				button:SetText(int)
 			end
 		end
@@ -184,7 +184,7 @@ local function Menu()
 
 	local function SettingStr(x, y, Label, value, value2)
 
-		local str = d[ value ][ value2 ]
+		local str = DC_d[ value ][ value2 ]
 
 		local label = vgui.Create("DLabel", PANEL.Panel)
 		label:SetPos(x +25, y +3)
@@ -213,7 +213,7 @@ local function Menu()
 			button:SetSize(35, 25)
 			button:SetText("ОК")
 			button.DoClick = function()
-				d[ value ][ value2 ] = TextEntry:GetValue()
+				DC_d[ value ][ value2 ] = TextEntry:GetValue()
 			end
 		end
 
@@ -323,11 +323,11 @@ local function Menu()
 
 	welcomePage()
 
-	local components = table.GetKeys(d)
+	local components = table.GetKeys(DC_d)
 
 	for _, component in pairs(components) do
 
-		PANEL.Elements[component] = PANEL.Elements:AddNode(t[component]["TITLE"], "icon16/application_view_tile.png")
+		PANEL.Elements[component] = PANEL.Elements:AddNode(DC_t[component]["TITLE"], "icon16/application_view_tile.png")
 		PANEL.Elements[component].DoClick = function()
 
 			local px = 0
@@ -335,17 +335,17 @@ local function Menu()
 
 			PANEL.Panel:Clear()
 
-			for key, settting in pairs(d[component]) do
+			for key, settting in pairs(DC_d[component]) do
 				if TypeID(settting) == TYPE_NUMBER then
-					SettingInt(10 + py, px, t[component][key], component, key)
+					SettingInt(10 + py, px, DC_t[component][key], component, key)
 				end
 
 				if TypeID(settting) == TYPE_STRING then
-					SettingStr(10 + py, px, t[component][key], component, key)
+					SettingStr(10 + py, px, DC_t[component][key], component, key)
 				end
 
 				if TypeID(settting) == TYPE_TABLE then
-					SettingColor(10 + py, px, t[component][key], component, key)
+					SettingColor(10 + py, px, DC_t[component][key], component, key)
 				end
 
 				py = py + 250

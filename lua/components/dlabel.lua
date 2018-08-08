@@ -1,9 +1,9 @@
-d["Label"], t["Label"] = {}, {}
+DC_d["Label"], DC_t["Label"] = {}, {}
 
-t["Label"]["TITLE"] = "Label"
+DC_t["Label"]["TITLE"] = "Label"
 
-d["Label"]["Font"], t["Label"]["Font"] = "DermaDefault", "Font"
-d["Label"]["Color"], t["Label"]["Color"] = Color(255, 255, 255), "Color"
+DC_d["Label"]["Font"], DC_t["Label"]["Font"] = "DermaDefault", "Font"
+DC_d["Label"]["Color"], DC_t["Label"]["Color"] = Color(255, 255, 255), "Color"
 
 local PANEL = {}
 
@@ -44,8 +44,8 @@ function PANEL:Init()
 
 	self:SetFont( "DermaDefault" )
 
-	self.m_colText = d["Label"]["Color"]
-	self:SetFont( d["Label"]["Font"] )
+	self.m_colText = DC_d["Label"]["Color"]
+	self:SetFont( DC_d["Label"]["Font"] )
 
 end
 

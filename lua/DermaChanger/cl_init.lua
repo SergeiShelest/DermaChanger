@@ -1,14 +1,14 @@
-d = {}
-t = {}
+DC_d = {}
+DC_t = {}
 
-local components = file.Find("DermaChanger/components/*.lua", "lsv")
+local components = file.Find("components/*", "LUA")
 
 for _, component in pairs(components) do
 	print("[DermaChanger] Include: "..component)
-	include("DermaChanger/components/"..component)
+	include("components/"..component)
 end
 
-function DCLoadTheme(table1, table2) --Спасибо Коля
+function DCLoadTheme(table1, table2)
 	for k, v in pairs(table1) do
 		for k2, v2 in pairs(table2) do
 			if k == k2 then
@@ -31,7 +31,7 @@ if not file.Exists("data/dermachanger/al.txt", "GAME") then
 end
 
 local f = file.Read("data/dermachanger/al.txt", "GAME")
-DCLoadTheme(d, util.JSONToTable(f))
+DCLoadTheme(DC_d, util.JSONToTable(f))
 
 include("DermaChanger/cl_gui.lua")
 

@@ -1,3 +1,16 @@
+if SERVER then
+	AddCSLuaFile()
+	AddCSLuaFile("DermaChanger/cl_init.lua")
+	AddCSLuaFile("DermaChanger/cl_gui.lua")
+
+	local components = file.Find("components/*", "LUA")
+
+	for _, component in pairs(components) do
+		AddCSLuaFile("components/"..component)
+	end
+
+end
+
 if CLIENT then
 	
 	timer.Simple( 0 , function() include("DermaChanger/cl_init.lua") end )
