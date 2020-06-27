@@ -1,7 +1,7 @@
 if SERVER then
 	AddCSLuaFile()
-	AddCSLuaFile("DermaChanger/cl_init.lua")
-	AddCSLuaFile("DermaChanger/cl_gui.lua")
+	AddCSLuaFile("dermchanger/cl_init.lua")
+	AddCSLuaFile("dermchanger/cl_gui.lua")
 
 	local components = file.Find("components/*", "LUA")
 
@@ -12,8 +12,7 @@ if SERVER then
 end
 
 if CLIENT then
-	
-	timer.Simple( 0 , function() include("DermaChanger/cl_init.lua") end )
+	timer.Simple( 0 , function() include("dermchanger/cl_init.lua") end )
 
 	list.Set(
 		"DesktopWindows",
@@ -28,5 +27,4 @@ if CLIENT then
 			end
 		}
 	)
-
 end

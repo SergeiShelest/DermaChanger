@@ -33,5 +33,5 @@ end
 local f = file.Read("data/dermachanger/al.txt", "GAME")
 DCLoadTheme(DC_d, util.JSONToTable(f))
 
-include("DermaChanger/cl_gui.lua")
+include("dermchanger/cl_gui.lua")
 
