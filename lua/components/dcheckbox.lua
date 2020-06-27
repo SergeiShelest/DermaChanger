@@ -17,6 +17,8 @@ DC_d.СheckBox.BorderDisabled, DC_t.СheckBox.BorderDisabled = Color(100, 100, 1
 DC_d.СheckBox.BorderSize, DC_t.СheckBox.BorderSize = 1, "BorderSize"
 DC_d.СheckBox.CornerRadius, DC_t.СheckBox.CornerRadius = 0, "CornerRadius"
 
+local draw = draw
+
 local Col = Color(0, 0, 0, 0)
 local ColBord = Color(0, 0, 0, 0)
 

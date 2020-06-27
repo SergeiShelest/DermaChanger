@@ -7,6 +7,9 @@ DC_d.Frame.Background, DC_t.Frame.Background = Color(70, 70, 70), "Background"
 DC_d.Frame.TitleColor, DC_t.Frame.TitleColor = Color(255, 255, 255), "TitleColor"
 DC_d.Frame.CornerRadius, DC_t.Frame.CornerRadius = 0, "CornerRadius"
 
+local draw = draw
+local surface = surface
+
 surface.CreateFont("Title", {
 	font = "CloseCaption_Normal",
 	size = 16,

@@ -5,6 +5,7 @@ DC_t.Panel.TITLE = "Panel"
 DC_d.Panel.Background, DC_t.Panel.Background = Color(70, 70, 70), "Background"
 DC_d.Panel.CornerRadius, DC_t.Panel.CornerRadius = 0, "CornerRadius"
 
+local draw = draw
 
 function SKIN:PaintPanel( panel, w, h )
 	if not panel.m_bBackground then return end	

@@ -11,6 +11,8 @@ DC_d.Tree.ActiveNodeText, DC_t.Tree.ActiveNodeText = Color(255, 255, 255), "Acti
 DC_d.Tree.NodeText, DC_t.Tree.NodeText = Color(218, 218, 218), "Node text"
 DC_d.Tree.Font, DC_t.Tree.Font = "DermaDefaultBold", "Font"
 
+local draw = draw
+local surface = surface
 
 function SKIN:PaintTree( panel, w, h )
 	draw.RoundedBox(DC_d.Tree.CornerRadius, 0, 0, w, h, DC_d.Tree.Background)

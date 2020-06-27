@@ -18,6 +18,8 @@ DC_d.Button.BorderDisabled, DC_t.Button.BorderDisabled = Color(255, 255, 255), "
 DC_d.Button.BorderSize, DC_t.Button.BorderSize = 0, "BorderSize"
 DC_d.Button.CornerRadius, DC_t.Button.CornerRadius = 5, "Corner Radius"
 
+local draw = draw
+
 local TextCol = Color(0, 0, 0, 0)
 local Col = Color(0, 0, 0, 0)
 local ColBorder = Color(0, 0, 0, 0)

@@ -11,6 +11,9 @@ DC_d.Tab.HoveredTextColor, DC_t.Tab.HoveredTextColor = Color(255, 255, 255), "Ho
 DC_d.Tab.TextColor, DC_t.Tab.TextColor = Color(218, 218, 218), "Text color"
 DC_d.Tab.Font, DC_t.Tab.Font = "DermaDefaultBold", "Font"
 
+local draw = draw
+local surface = surface
+
 function SKIN:PaintTab( panel, w, h )
 	if not panel.m_bBackground then return end
 

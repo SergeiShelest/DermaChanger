@@ -11,10 +11,11 @@ DC_d.Scroll.Disabled, DC_t.Scroll.Disabled = Color(100, 100, 100), "Disabled"
 DC_d.Scroll.ArrowSize, DC_t.Scroll.ArrowSize = 3, "ArrowSize"
 DC_d.Scroll.ArrowColor, DC_t.Scroll.ArrowColor = Color(255, 255, 255), "Arrow color"
 
+local draw = draw
+local surface = surface
+
 function SKIN:PaintVScrollBar( panel, w, h )
-
 	draw.RoundedBox(DC_d.Scroll.CornerRadius, 0, 0, w, h, DC_d.Scroll.Background)
-
 end
 
 local grip = Color(0, 0, 0, 0)

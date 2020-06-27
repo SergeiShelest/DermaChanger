@@ -14,6 +14,8 @@ DC_d.TextEntry.TitleColor, DC_t.TextEntry.TitleColor = Color(100, 100, 100), "Ti
 DC_d.TextEntry.TextColor, DC_t.TextEntry.TextColor = Color(255, 255, 255), "Text color"
 DC_d.TextEntry.SelectColor, DC_t.TextEntry.SelectColor = Color(217, 142, 47), "Select color"
 
+local draw = draw
+
 function SKIN:PaintTextEntry( panel, w, h )
 	if ( panel.m_bBackground ) then
 		if ( panel:GetDisabled() ) then

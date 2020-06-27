@@ -8,6 +8,9 @@ DC_d.NumSlider.Hovered, DC_t.NumSlider.Hovered = Color(197, 122, 27), "Hovered"
 DC_d.NumSlider.Active, DC_t.NumSlider.Active = Color(187, 102, 17), "Active"
 DC_d.NumSlider.Disabled, DC_t.NumSlider.Disabled = Color(100, 100, 100), "Disabled"
 
+local draw = draw
+local surface = surface
+
 local function PaintNotches( x, y, w, h, num )
 	if not num then return end
 

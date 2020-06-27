@@ -10,6 +10,9 @@ DC_d.Menu.Line, DC_t.Menu.Line = Color(50, 50, 50), "Line"
 DC_d.Menu.Color, DC_t.Menu.Color = Color(255, 255, 255), "Color"
 DC_d.Menu.ArrowColor, DC_t.Menu.ArrowColor = Color(255, 255, 255), "Arrow color"
 
+local draw = draw
+local surface = surface
+
 function SKIN:PaintMenu( panel, w, h )
 	draw.RoundedBox(0, 0, 0, w, h, DC_d.Menu.Background)
 end

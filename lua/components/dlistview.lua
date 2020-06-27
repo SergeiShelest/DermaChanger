@@ -8,6 +8,8 @@ DC_d.ListView.Hovered, DC_t.ListView.Hovered = Color(217, 142, 47), "Hovered"
 DC_d.ListView.Select, DC_t.ListView.Select = Color(207, 132, 37), "Select"
 DC_d.ListView.LineCornerRadius, DC_t.ListView.LineCornerRadius = 3, "LineCornerRadius"
 
+local draw = draw
+
 function SKIN:PaintListView( panel, w, h )
 	draw.RoundedBox(DC_d.ListView.CornerRadius, 0, 0, w, h, DC_d.ListView.Background)
 end

@@ -18,6 +18,9 @@ DC_d.ComboBox.ArrowDisabled, DC_t.ComboBox.ArrowDisabled = Color(50, 50, 50), "A
 DC_d.ComboBox.ArrowHover, DC_t.ComboBox.ArrowHover = Color(197, 122, 27), "ArrowHover"
 DC_d.ComboBox.ArrowFocus, DC_t.ComboBox.ArrowFocus = Color(197, 122, 27), "ArrowFocus"
 
+local draw = draw
+local surface = surface
+
 local Col = Color(0, 0, 0, 0)
 local ColBord = Color(0, 0, 0, 0)
 

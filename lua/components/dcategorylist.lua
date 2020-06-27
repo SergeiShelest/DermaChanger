@@ -21,6 +21,8 @@ DC_d.CategoryList.BorderSelect, DC_t.CategoryList.BorderSelect = Color(50, 50, 5
 DC_d.CategoryList.BtnBorderSize, DC_t.CategoryList.BtnBorderSize = 1, "BtnBorderSize"
 DC_d.CategoryList.BtnCornerRadius, DC_t.CategoryList.BtnCornerRadius = 3, "BtnCornerRadius"
 
+local draw = draw
+
 function SKIN:PaintCategoryList( panel, w, h )
 	if DC_d.CategoryList.BorderSize ~= 0 then
 		draw.RoundedBox(DC_d.CategoryList.CornerRadius, 0, 0, w, h, DC_d.CategoryList.Border)
